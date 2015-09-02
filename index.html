@@ -1,0 +1,766 @@
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>html 5 banner</title>
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<style>
+
+			/*
+			////// 01. navigation
+			////// 02. left content
+			////// 03. right content
+			////// 04. product pop ups
+			////// 05. disclaimer
+			*/
+
+			#SBA_expand_banner_wrapper a {outline:0px !important;}
+			#SBA_expand_banner_wrapper a img{text-decoration:none; border:0px !important; border-style:none !important; outline:0px !important;}
+
+			#SBA_expand_banner_wrapper{
+				width:300px;
+				height:600px;
+				position: absolute;
+				top:0;
+				left:0;
+				font-family: bemio_italicregular;
+				text-transform: uppercase;
+				background:#000000;
+			}
+
+
+			/*  01. navigation  */
+
+			.active{
+				background-color:#000000;
+			}
+			#SBA_expand_banner_logo{
+				margin: 20px;
+			}
+			#SBA_expand_navigation{
+				position: absolute;
+				height:20px;
+				top: 102px;
+				width: 300px;
+				background-color:#CC092F;
+			}
+
+			#SBA_expand_navigation ul{
+				padding:0;
+				margin:0;
+				position: absolute;
+				width:300px;
+			}
+
+			#SBA_expand_navigation ul li{
+				list-style: none;
+				float:left;
+				font-size:8px;
+				display:block;
+			}
+
+			#SBA_expand_navigation ul li:hover{
+				background-color:#000000;
+			}
+
+			#SBA_expand_navigation ul li.SBA_expand_nav_btns{
+				padding:0;
+				position: relative;
+				top:0;
+			}
+
+			#SBA_expand_navigation ul li.SBA_expand_nav_btns a{
+				color:#ffffff;
+				text-decoration: none;
+				font-family:arial, sans-serif;
+				display:block;
+				height:32px;
+				line-height:22px;
+				padding:0 6px;
+			}
+
+			#SBA_expand_navigation ul li#SBA_expand_main_close_btn{
+				position: absolute;
+				left:276px;
+				height: 32px;
+				width:24px;
+			}
+
+			#SBA_expand_navigation ul li#SBA_expand_main_close_btn a{
+				position: relative;
+				top: 4px;
+				left: 7px;
+			}
+
+			/* 02. left content */
+			#SBA_expand_left_content{
+				width:300px;
+				height:218px;
+				position: absolute;
+				top:122px;
+				background:url(tile.jpg) repeat;
+			}
+
+			.panelShow{
+				display:block !important;
+			}
+
+			.block{
+				display:none;
+				margin-top:-15px;
+				padding:0 10px 10px 10px;
+			}
+
+			.block h2{
+				font-size: 19px;
+				text-align:center;
+			}
+
+			.block img{
+				position: absolute;
+			}
+
+			#SBA_expand_disclaimer_btn{
+				color:#000000;
+				font-family:arial, sans-serif;
+				font-size:12px;
+				text-decoration: none;
+				position: absolute;
+				font-weight: bold;
+				text-transform: none;
+				top:196px;
+				left:10px;
+			}
+
+			#SBA_expand_left_content .SBA_expand_footer_btns{
+				font-family:arial, sans-serif;
+				font-size:13px;
+				line-height: 27px;
+				text-transform: none;
+			}
+
+			#SBA_expand_left_content ul{
+				position: absolute;
+				top:165px;
+				left:83px;
+			}
+
+			/* 03. right content */
+			#SBA_expand_right_content{
+				width: 240px;
+				height: 260px;
+				position: absolute;
+				top: 340px;
+				left: 0px;
+				background-color: #F4F4F4;
+				font-family: arial, sans-serif;
+				text-transform: none;
+				color: #565656;
+				padding: 0px 30px;
+			}
+			#SBA_expand_text{
+				font-size:18px;
+				margin-bottom:0;
+			}
+			#SBA_expand_text_right{
+				margin: 0 0 20px 20px;
+			}
+			#SBA_expand_address{
+				font-size:12px;
+				font-weight: bold;
+			}
+
+			ul#SBA_expand_btns{
+				padding:0;
+				height:22px;
+			}
+
+			#SBA_expand_btns li{
+				list-style: none;
+				float:left;
+				display:block;
+				background-color:#4B5AE8;
+				height:26px;
+				padding:0 6px;
+				margin-right:5px;
+			}
+
+			#SBA_expand_btns li:hover{
+				background-color:#000000;
+			}
+
+			#SBA_expand_btns li a{
+				display:block;
+				font-size:13px;
+				text-decoration:none;
+				color:#ffffff;
+				height:26px;
+				line-height: 27px;
+			}
+
+			#SBA_expand_main_disclaimer{
+				font-size:7px;
+				display:block;
+				width: 100%;
+			}
+
+			#SBA_expand_right_content img{
+				display:block;
+				margin:0 auto;
+			}
+
+			/* 04. product pop ups */
+			#SBA_expand_lightbox {
+				width: 100%;
+				height: 424px;
+				display: block;
+				position: absolute;
+				background: rgba(0,0,0,.7);
+				display: none;
+				top:122px;
+			}
+
+			#SBA_expand_lightbox.SBA_expand_show {
+				display: block;
+			}
+
+			#SBA_expand_innerLightbox{
+				width: 280px;
+				height: 400px;
+				background-color: #E2383F;
+				position: absolute;
+				display: block;
+				margin: 0 auto;
+				top: 14px;
+				left: 10px;
+				overflow:hidden;
+				color:#ffffff;
+			}
+
+			#SBA_expand_lightbox_left{
+				width:100%;
+				height: 186px;
+				display: block;
+				float:left;
+				background:url(tile.jpg) repeat;
+			}
+
+			#SBA_expand_lightbox_right {
+				width: 100%;
+				height: 306px;
+				display: block;
+				background-color: #E2383F;
+				-webkit-transform: rotate(84deg);
+				-moz-transform: rotate(84deg);
+				-ms-transform: rotate(84deg);
+				-o-transform: rotate(84deg);
+				transform: rotate(84deg);
+				position: absolute;
+				top: 151px;
+				left: 24px;
+			}
+
+			#SBA_expand_lightbox_right_content {
+			    position: absolute;
+			    width: 220px;
+			    top: 182px;
+			    left: 35px;
+			}
+
+			#SBA_expand_lightbox_close{
+				position:absolute;
+				left: 277px;
+				top: 10px;
+			}
+
+			.SBA_expand_product_title{
+				font-size:12px;
+				text-transform: none;
+				font-family:arial, sans-serif;
+				font-weight: bold;
+				margin: -10px 0 0 10px;
+			}
+
+			.SBA_expand_product_price{
+				font-size:40px;
+				line-height: 0;
+				margin:46px 0 0 30px;
+				font-weight: normal !important;
+			}
+			.SBA_expand_product_Subhead{
+				font-size:18px;
+				line-height: 15px;
+				margin-left:53px;
+				font-weight: normal !important;
+			}
+
+			.SBA_expand_product_Desc {
+				font-family: arial, sans-serif;
+				font-size: 11px;
+				text-transform: none;
+				margin: -20px 0 0 10px;
+				line-height: 13px;
+			}
+
+			.SBA_expand_product_cta{
+				font-family:arial, sans-serif;
+				font-size:12px;
+				color:#000000;
+				background-color:#F9F5F5;
+				padding:5px 10px;
+				position: absolute;
+			    top: 376px;
+				left: 100px;
+				text-decoration:none;
+				text-transform:none;
+			}
+
+			.SBA_expand_product_cta:hover{
+				background-color:#000000;
+				color:#FFFFFF;
+			}
+
+			/* 05. disclaimer */
+			#SBA_expand_disclaimer{
+				position: absolute;
+				width:100%;
+				top:165px;
+				display:none;
+			}
+
+			#SBA_expand_disclaimer p{
+				font-size:10px;
+				line-height: 11px;
+				font-family: arial, sans-serif;
+				color:#ffffff;
+				text-transform: none;
+				background-color:rgba(0,0,0,.8);
+				border-radius:5px;
+				padding:10px;
+				width:460px;
+				margin:0 auto;
+				display:block;
+			}
+
+			#SBA_expand_disclaimer_close_btn {
+				position: absolute;
+				left: 476px;
+				top: -5px;
+			}
+		</style>
+	</head>
+
+	<body onload="init()">
+		<div id="SBA_expand_banner_wrapper"><!-- Main Banner Wrapper -->
+			<div id="SBA_expand_banner_logo"><!-- Logo -->
+				<img src="logo.png" alt="True Value" />
+			</div>
+			<!-- Top Navigation -->
+			<div id="SBA_expand_navigation">
+				<ul>
+					<li class="SBA_expand_nav_btns menu active"><a href="#" id="panel1_btn">Featured Savings</a></li>
+					<li class="SBA_expand_nav_btns menu"><a href="#" id="panel2_btn">Father's Day</a></li>
+					<li class="SBA_expand_nav_btns menu"><a href="#" id="panel3_btn">Bargains of the Month</a></li>
+
+					<!-- Top Navigation close Button -->
+					<li id="SBA_expand_main_close_btn"><a href="#"><img src="close-btn-1.png" alt="close" width="12" /></a></li>
+				</ul>
+			</div><!-- closes #SBA_expand_navigation -->
+
+
+			<!-- Panels Header Text -->
+			<div id="SBA_expand_left_content">
+				<section id="one" class="block panelShow" ><h2>Featured Savings</h2></section>
+				<section id="two" class="block" ><h2>Father's Day</h2></section>
+				<section id="three" class="block" ><h2>Bargains of the Month</h2></section>
+
+
+				<!-- Footer Navigation -->
+				<a href="#" id="SBA_expand_disclaimer_btn" >Disclaimer</a>
+				<ul id="SBA_expand_btns">
+					<li><a href="#" class="SBA_expand_footer_btns" >Gift Cards</a></li>
+					<li><a href="#" class="SBA_expand_footer_btns" >Shop TrueValue.com</a></li>
+				</ul>
+			</div><!-- closes #SBA_expand_left_content -->
+
+
+			<!-- Right Content -->
+			<div id="SBA_expand_right_content">
+				<p id="SBA_expand_text">Find your participating<br/>True Value Hardware Store:</p>
+				<div id="SBA_expand_text_right">
+					<p id="SBA_expand_address">ZWEIFEL TRUE VALUE HDW.<br/>345 W. 25th PL<br/>CHICAGO, IL 60616-2222</br>Tel: 312-842-1924</p>
+					<ul id="SBA_expand_btns">
+						<li><a href="#">Change Store</a></li>
+						<li><a href="#">Directions</a></li>
+					</ul>
+					<p id="SBA_expand_main_disclaimer">Not all True Value retailers participate<br/>in all promotions. </p>
+				</div>
+				<!-- Logo Link -->
+				<a href="#"><img src="logoButton.png" alt="behind every project is a True Value" width="130"  /></a>
+			</div><!-- closes #SBA_expand_right_content -->
+
+
+			<!-- Disclaimer Text -->
+			<div id="SBA_expand_disclaimer">
+				<a id="SBA_expand_disclaimer_close_btn" href="#"><img src="disclaimer_close_btn.png" alt="Close" /></a>
+				<p>For a location near you call 1-800-6-Hardware or 1-800-642-7392. Sale ends 6/30/15.
+				   Available while supplies last. Offer available at participating stores. Products, 
+				   prices and promotions period may vary. True Value retailers are independently owned 
+				   and operated and may decide to opt out of the promotion.</p>
+			</div><!-- closes #SBA_expand_disclaimer -->
+
+			<div id="SBA_expand_lightbox">
+				<div id="SBA_expand_innerLightbox">
+					<div id="SBA_expand_lightbox_left"></div>
+					<div id="SBA_expand_lightbox_right"></div>
+					<div id="SBA_expand_lightbox_right_content"></div>
+				</div>
+				<a id="SBA_expand_lightbox_close" href="#"><img src="close-btn.png" alt="Close" /></a>
+			</div><!-- closes #SBA_expand_lightbox -->
+
+		</div><!-- closes #SBA_banner_wrapper -->
+		<script>
+
+function init() {
+
+var product = new Object();
+product.Item = new Array();
+
+
+/* Panel 1 */
+/* Panel 1  Product 1*/
+product.Item.push({
+  "Panel":"one",
+  "Image_url" : "panel1product1.png", 
+  "Image_width" : null,
+  "Top" : "50px", 
+  "Left" : "10px",
+  "BtnTop" : "41px", 
+  "BtnLeft" : "64px",  
+  "Price" : "$19.99", 
+  "Subhead" : "SAVE 30%",
+  "Title" : "50-Ft. NeverKink Garden Hose",
+  "Desc" : "- Self straightening technology &nbsp;&nbsp;guarantees no kinks or tangles<br/>- Click-Seal resists leaks<br/>- 5/8 in. x 50-ft.<br/>- Lifetime warranty",
+  "Link_text" : "Shop Now", 
+  "Link_url":"http://google.com",
+  "Lightbox_Image_Width" : null,
+  "ProductTop" : "50px", 
+  "ProductLeft" : "69px",
+  "LogoImage_Url" : "panel1product1-logo.png",
+  "LogoTop" : "-80px",
+  "LogoLeft" : "150px"
+});
+
+/* Panel 1  Product 2*/
+product.Item.push({
+  "Panel":"one",
+  "Image_url" : "panel1product2.png",  
+  "Image_width" : null,
+  "Top" : "40px", 
+  "Left" : "120px",
+  "BtnTop" : "48px", 
+  "BtnLeft" : "181px",
+  "Price" : "$99.97", 
+  "Subhead" : "Special Buy",
+  "Title" : "20-Volt Cordless String Trimmer and Blower Combo Kit",
+  "Desc" : "- 12&#8243; string trimmer has auto feeding &nbsp;&nbsp;system<br/>- Sweeper/blower has built-in scraper to &nbsp;&nbsp;loosen wet leaves from surfaces",
+  "Link_text" : "Shop Now", 
+  "Link_url":"http://google.com", 
+  "Lightbox_Image_Width" : null,
+  "ProductTop" : "30px", 
+  "ProductLeft" : "89px",
+  "LogoImage_Url" : "panel1product2-logo.png",
+  "LogoTop" : "-40px",
+  "LogoLeft" : "143px"
+});
+
+/* Panel 1  Product 3*/
+product.Item.push({
+  "Panel":"one",
+  "Image_url" : "panel1product3.png",
+  "Image_width" : null,
+  "Top" : "90px", 
+  "Left" : "176px",
+  "BtnTop" : "134px", 
+  "BtnLeft" : "220px",  
+  "Price" : "$14.99", 
+  "Subhead" : "Save 50%",
+  "Title" : "Heavy-Duty Metal Oscillating Sprinkler",
+  "Desc" : "- Covers up to 3,500 sq. ft.<br/>- 17 brass jets resists clogs<br/>- Easy-to-use rotation dial",
+  "Link_text" : "Shop Now", 
+  "Link_url":"http://google.com", 
+  "Lightbox_Image_Width" : "150px",
+  "ProductTop" : "57px", 
+  "ProductLeft" : "59px",
+  "LogoImage_Url" : null,
+  "LogoTop" : null,
+  "LogoLeft" : null
+});
+
+
+/* Panel 2 */
+/* Panel 2  Product 1*/
+product.Item.push({
+  "Panel":"two",
+  "Image_url" : "panel2product1.png", 
+  "Image_width" : null,
+  "Top" : "50px", 
+  "Left" : "10px",
+  "BtnTop" : "131px", 
+  "BtnLeft" : "52px", 
+  "Price" : "$14.99", 
+  "Subhead" : "Save 30%",
+  "Title" : "16-Oz. Vacuum Travel Cup",
+  "Desc" : "- Durable stainless steel cup<br/>- Insulated<br/>- Dishwasher safe",
+  "Link_text" : "Shop Now", 
+  "Link_url":"http://google.com", 
+  "Lightbox_Image_Width" : "90px",
+  "ProductTop" : "13px", 
+  "ProductLeft" : "98px",
+  "LogoImage_Url" : null,
+  "LogoTop" : null,
+  "LogoLeft" : null
+});
+
+/* Panel 2  Product 2*/
+product.Item.push({
+  "Panel":"two",
+  "Image_url" : "panel2product2.png", 
+  "Image_width" : null,
+  "Top" : "50px", 
+  "Left" : "93px",
+  "BtnTop" : "68px", 
+  "BtnLeft" : "135px", 
+  "Price" : "$199.00", 
+  "Subhead" : "Save $20",
+  "Title" : "21in. 3-in-1 Gas Mower",
+  "Desc" : "- 140-cc Briggs & Stratton engine<br/>- Bag, side discharge or mulch capable",
+  "Link_text" : "Shop Now", 
+  "Link_url":"http://google.com", 
+  "Lightbox_Image_Width" : null,
+  "ProductTop" : "30px", 
+  "ProductLeft" : "49px",
+  "LogoImage_Url" : "panel2product2-logo.png",
+  "LogoTop" : "-70px",
+  "LogoLeft" : "125px"
+});
+
+/* Panel 2  Product 3*/
+product.Item.push({
+  "Panel":"two",
+  "Image_url" : "panel2product3.png",
+  "Image_width" : null,
+  "Top" : "40px", 
+  "Left" : "216px",
+  "BtnTop" : "83px", 
+  "BtnLeft" : "240px",  
+  "Price" : "$29.99", 
+  "Subhead" : "Save $5",
+  "Title" : "3-Pc. BBQ Tool Set",
+  "Desc" : "- Stainless steel spatula, fort and tongs",
+  "Link_text" : "Shop Now", 
+  "Link_url":"http://google.com", 
+  "Lightbox_Image_Width" : "80px",
+  "ProductTop" : "20px", 
+  "ProductLeft" : "69px",
+  "LogoImage_Url" : "panel2product3-logo.png",
+  "LogoTop" : "-60px",
+  "LogoLeft" : "157px"
+});
+
+
+/* Panel 3 */
+/* Panel 3  Product 1*/
+product.Item.push({
+  "Panel":"three",
+  "Image_url" : "panel3product1.png",
+  "Image_width" : null,
+  "Top" : "80px", 
+  "Left" : "5px",
+  "BtnTop" : "64px", 
+  "BtnLeft" : "39px",  
+  "Price" : "$17.99", 
+  "Subhead" : "Sale",
+  "Title" : "1.33-Gal. Grass & Weed Killer",
+  "Desc" : "- Provides up to 10 minutes continuous &nbsp;&nbsp;spray<br/>- Easy-to-operate extendable wand<br/>- Refillable container with nested top &nbsp;&nbsp;sprayer",
+  "Link_text" : "Shop Now", 
+  "Link_url":"http://google.com", 
+  "Lightbox_Image_Width" : "110px",
+  "ProductTop" : "27px", 
+  "ProductLeft" : "74px",
+  "LogoImage_Url" : null,
+  "LogoTop" : null,
+  "LogoLeft" : null
+});
+
+/* Panel 3  Product 2*/
+product.Item.push({
+  "Panel":"three",
+  "Image_url" : "panel3product2.png", 
+  "Image_width" : null,
+  "Top" : "53px", 
+  "Left" : "97px",
+  "BtnTop" : "63px", 
+  "BtnLeft" : "106px", 
+  "Price" : "$19.99", 
+  "Subhead" : "Save over 30%",
+  "Title" : "Deluxe Sports Chair",
+  "Desc" : "- Sturdy steel frame with 3D mesh for &nbsp;&nbsp;comfort<br/>- Padded armrests<br/>- Built-in cup holder",
+  "Link_text" : "Shop Now", 
+  "Link_url":"http://google.com", 
+  "Lightbox_Image_Width" : "110px",
+  "ProductTop" : "17px", 
+  "ProductLeft" : "90px",
+  "LogoImage_Url" : null,
+  "LogoTop" : null,
+  "LogoLeft" : null
+});
+
+/* Panel 3  Product 3*/
+product.Item.push({
+  "Panel":"three",
+  "Image_url" : "panel3product3.png",
+  "Image_width" : null,
+  "Top" : "52px", 
+  "Left" : "190px",
+  "BtnTop" : "82px", 
+  "BtnLeft" : "198px",  
+  "Price" : "$1.99<span style='font-size:18px;'>Each</span>", 
+  "Subhead" : "Save 33%",
+  "Title" : "Solar Path Light",
+  "Desc" : "- Bright white LED illumintaes clear plastic lens",
+  "Link_text" : "Shop Now", 
+  "Link_url":"http://google.com", 
+  "Lightbox_Image_Width" : "40px",
+  "ProductTop" : "30px", 
+  "ProductLeft" : "120px",
+  "LogoImage_Url" : null,
+  "LogoTop" : null,
+  "LogoLeft" : null
+});
+
+/* Panel 3  Product 4*/
+product.Item.push({
+  "Panel":"three",
+  "Image_url" : "panel3product4.png", 
+  "Image_width" : null,
+  "Top" : "40px", 
+  "Left" : "236px",
+  "BtnTop" : "104px", 
+  "BtnLeft" : "240px", 
+  "Price" : "$17.99", 
+  "Subhead" : "Save Over 25%",
+  "Title" : "16-In. Oscillating Stand Fan",
+  "Desc" : "- 3-speeds<br/>- Adjustable height with tilting head<br/>- Adjustable height with tilting head",
+  "Link_text" : "Shop Now", 
+  "Link_url":"http://google.com", 
+  "Lightbox_Image_Width" : "58px",
+  "ProductTop" : "20px", 
+  "ProductLeft" : "115px",
+  "LogoImage_Url" : null,
+  "LogoTop" : null,
+  "LogoLeft" : null
+});
+
+function lightbox(title) {
+
+  $.each(product.Item, function(index){
+	if(this.Title == title) {
+	  $('#SBA_expand_lightbox_right_content').append('<h2 class="SBA_expand_product_price">' + this.Price + '<h2/>');
+	  $('#SBA_expand_lightbox_right_content').append('<h3 class="SBA_expand_product_Subhead">' + this.Subhead + '<h3/>');
+	  $('#SBA_expand_lightbox_right_content').append('<h1 class="SBA_expand_product_title">' + this.Title + '<h1/>');
+	  $('#SBA_expand_lightbox_right_content').append('<p class="SBA_expand_product_Desc">' + this.Desc + '<p/>');
+	  $('#SBA_expand_innerLightbox').append('<a href="' + this.Link_url + '"class="SBA_expand_product_cta">' + this.Link_text + '<a/>');
+	  $('#SBA_expand_lightbox_left').append('<img data-title="'+ this.Title +'" src="' + this.Image_url + '" style="width:' + this.Lightbox_Image_Width + '; top:' + this.ProductTop + '; left:' + this.ProductLeft + '; position:relative;" / ><br/>');
+	  if(this.LogoImage_Url != null){
+		$('#SBA_expand_lightbox_left').append('<img data-title="'+ this.Title +'" src="' + this.LogoImage_Url + '" style="top:' + this.LogoTop + '; left:' + this.LogoLeft + '; position:relative;" / ><br/>');
+	  }
+	  $('#SBA_expand_lightbox').addClass('SBA_expand_show');
+	}
+  });
+}
+
+
+$.each(product.Item, function(index){
+	if (this.Panel == "one") {
+		  $('#one').append('<img src="' + this.Image_url + '" style="width:' + this.Image_width + '; top:' + this.Top + '; left:' + this.Left + ';" / ><br/>');
+		  $('#one').append('<img class="SBA_expand_product" data-title="'+ this.Title +'"src="plus-btn.png" style="top:' + this.BtnTop + '; left:' + this.BtnLeft + '; cursor: pointer; " / ><br/>');
+	}
+	else if (this.Panel == "two") {
+		 $('#two').append('<img src="' + this.Image_url + '" style="width:' + this.Image_width + '; top:' + this.Top + '; left:' + this.Left + ';" / ><br/>');
+		 $('#two').append('<img class="SBA_expand_product" data-title="'+ this.Title +'" src="plus-btn.png" style="top:' + this.BtnTop + '; left:' + this.BtnLeft + '; cursor: pointer;" / ><br/>');
+	}
+	else if(this.Panel == "three") {
+		  $('#three').append('<img src="' + this.Image_url + '" style="width:' + this.Image_width + '; top:' + this.Top + '; left:' + this.Left + ';" / ><br/>');
+		  $('#three').append('<img class="SBA_expand_product" data-title="'+ this.Title +'" src="plus-btn.png" style="top:' + this.BtnTop + '; left:' + this.BtnLeft + '; cursor: pointer;" / ><br/>');
+	}
+});
+
+
+/* Runs function to open Lightbox */
+$('.SBA_expand_product').each(function(index) {
+
+  $(this).on('click', function() {
+	var thisTitle = $(this).data('title');
+	lightbox(thisTitle);
+
+  });
+});
+
+
+/* Lightbox Close Button */
+
+function closeLightbox(){
+	$('#SBA_expand_lightbox').removeClass('SBA_expand_show');
+	$('#SBA_expand_lightbox_left').empty();
+	$('#SBA_expand_lightbox_right_content').empty();
+}
+
+$('#SBA_expand_lightbox_close').click(function(){
+   closeLightbox();
+});
+
+
+/* adds black background to clicked nav btn */
+$('li.menu').click(function(){
+	$('li.menu').removeClass("active");
+	$(this).addClass("active");
+});
+
+
+/* shows and hides panels */
+$('#panel1_btn').click(function(){
+  $('section.block').removeClass('panelShow');
+  $('section#one').addClass('panelShow');
+   closeLightbox();
+});
+
+$('#panel2_btn').click(function(){
+  $('section.block').removeClass('panelShow');
+  $('section#two').addClass('panelShow');
+   closeLightbox();
+});
+
+$('#panel3_btn').click(function(){
+  $('section.block').removeClass('panelShow');
+  $('section#three').addClass('panelShow');
+   closeLightbox();
+});
+
+
+/* disclaimer popup */
+$('#SBA_expand_disclaimer_btn').click(function(){
+  $('#SBA_expand_disclaimer').css('display', 'block');
+});
+$('#SBA_expand_disclaimer_close_btn').click(function(){
+  $('#SBA_expand_disclaimer').css('display', 'none');
+});
+
+
+}
+		</script>
+	</body>
+
+</html>

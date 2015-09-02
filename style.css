@@ -1,0 +1,366 @@
+
+@font-face {
+    font-family: 'bemio_italicregular';
+    src: url('bemio_italic-webfont.eot');
+    src: url('bemio_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('bemio_italic-webfont.woff2') format('woff2'),
+         url('bemio_italic-webfont.woff') format('woff'),
+         url('bemio_italic-webfont.ttf') format('truetype'),
+         url('bemio_italic-webfont.svg#bemio_italicregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*
+////// 01. navigation
+////// 02. left content
+////// 03. right content
+////// 04. product pop ups
+////// 05. disclaimer
+*/
+
+#tv_expand_banner_wrapper a {outline:0px !important;}
+#tv_expand_banner_wrapper a img{text-decoration:none; border:0px !important; border-style:none !important; outline:0px !important;}
+
+#tv_expand_banner_wrapper{
+	width:500px;
+	height:250px;
+	position: absolute;
+	top:0;
+	left:0;
+	font-family: bemio_italicregular;
+	text-transform: uppercase;
+	background:#000000;
+}
+
+
+/*  01. navigation  */
+
+.active{
+	background-color:#000000;
+}
+
+#tv_expand_navigation{
+	position: absolute;
+	width:500px;
+	height:32px;
+	background-color:#CC092F;
+}
+
+#tv_expand_navigation ul{
+	padding:0;
+	margin:0;
+	position: absolute;
+	width:500px;
+	height:32px;
+}
+
+#tv_expand_navigation ul li{
+	list-style: none;
+	float:left;
+	font-size:12px;
+	display:block;
+}
+
+#tv_expand_navigation ul li:hover{
+	background-color:#000000;
+}
+
+#tv_expand_navigation ul li.tv_expand_nav_btns{
+	padding:0 10px;
+	position: relative;
+	top:0;
+	height: 32px;
+}
+
+#tv_expand_navigation ul li.tv_expand_nav_btns a{
+	color:#ffffff;
+	text-decoration: none;
+	font-family:arial, sans-serif;
+	display:block;
+	height:32px;
+	line-height:34px;
+	padding:0 6px;
+}
+
+#tv_expand_navigation ul li#tv_expand_main_close_btn{
+	position: absolute;
+	left:470px;
+	height: 32px;
+	width:30px;
+}
+
+#tv_expand_navigation ul li#tv_expand_main_close_btn a{
+	position: relative;
+	top:7px;
+	left:7px;
+}
+
+/* 02. left content */
+#tv_expand_left_content{
+	width:300px;
+	height:218px;
+	position: absolute;
+	top:32px;
+	background:url(images/tile.jpg) repeat;
+}
+
+.panelShow{
+	display:block !important;
+}
+
+.block{
+	display:none;
+	margin-top:-15px;
+	padding:0 10px 10px 10px;
+}
+
+.block h2{
+	font-size: 19px;
+	text-align:center;
+}
+
+.block img{
+	position: absolute;
+}
+
+#tv_expand_disclaimer_btn{
+	color:#000000;
+	font-family:arial, sans-serif;
+	font-size:10px;
+	text-decoration: none;
+	position: absolute;
+	font-weight: bold;
+	text-transform: none;
+	top:196px;
+	left:10px;
+}
+
+#tv_expand_left_content .tv_expand_footer_btns{
+	font-family:arial, sans-serif;
+	font-size:13px;
+	line-height: 27px;
+	text-transform: none;
+}
+
+#tv_expand_left_content ul{
+	position: absolute;
+	top:185px;
+	left:83px;
+}
+
+/* 03. right content */
+#tv_expand_right_content{
+	width:180px;
+	height:218px;
+	position: absolute;
+	top:32px;
+	left:300px;
+	background-color:#F4F4F4;
+	font-family:arial, sans-serif;
+	text-transform: none;
+	color:#565656;
+	padding:0 10px;
+}
+
+#tv_expand_text{
+	font-size:13px;
+	margin-bottom:0;
+}
+
+#tv_expand_address{
+	font-size:12px;
+	font-weight: bold;
+}
+
+ul#tv_expand_btns{
+	padding:0;
+	margin:0;
+	height:22px;
+}
+
+#tv_expand_btns li{
+	list-style: none;
+	float:left;
+	display:block;
+	background-color:#E0393D;
+	height:26px;
+	padding:0 6px;
+	margin-right:5px;
+}
+
+#tv_expand_btns li:hover{
+	background-color:#000000;
+}
+
+#tv_expand_btns li a{
+	display:block;
+	font-size:13px;
+	text-decoration:none;
+	color:#ffffff;
+	height:26px;
+	line-height: 27px;
+}
+
+#tv_expand_main_disclaimer{
+	font-size:7px;
+	display:block;
+	width: 100%;
+}
+
+#tv_expand_right_content img{
+	display:block;
+	margin:0 auto;
+}
+
+/* 04. product pop ups */
+#tv_expand_lightbox {
+	width: 100%;
+	height: 218px;
+	display: block;
+	position: absolute;
+	background: rgba(0,0,0,.7);
+	display: none;
+	top:32px;
+}
+
+#tv_expand_lightbox.tv_expand_show {
+	display: block;
+}
+
+#tv_expand_innerLightbox{
+	width: 470px;
+	height: 186px;
+	background-color: #E2383F;
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	top: 14px;
+	overflow:hidden;
+	color:#ffffff;
+}
+
+#tv_expand_lightbox_left{
+	width:60%;
+	height: 186px;
+	display: block;
+	float:left;
+	background:url(images/tile.jpg) repeat;
+}
+
+#tv_expand_lightbox_right {
+	width: 80%;
+	height: 306px;
+	display: block;
+	background-color: #E2383F;
+	-webkit-transform: rotate(20deg);
+	-moz-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    -o-transform: rotate(20deg);
+    transform: rotate(20deg);
+	position: absolute;
+	left: 212px;
+}
+
+#tv_expand_lightbox_right_content {
+	-webkit-transform: rotate(-20deg);
+	-moz-transform: rotate(-20deg);
+    -ms-transform: rotate(-20deg);
+    -o-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+    width:222px;
+    margin-left: 10px;
+}
+
+#tv_expand_lightbox_close{
+	position:absolute;
+	left:472px;
+	top:9px;
+}
+
+.tv_expand_product_title{
+	font-size:12px;
+	text-transform: none;
+	font-family:arial, sans-serif;
+	font-weight: bold;
+	margin: -10px 0 0 10px;
+}
+
+.tv_expand_product_price{
+	font-size:40px;
+	line-height: 0;
+	margin:46px 0 0 30px;
+	font-weight: normal !important;
+}
+.tv_expand_product_Subhead{
+	font-size:18px;
+	line-height: 15px;
+	margin-left:53px;
+	font-weight: normal !important;
+}
+
+.tv_expand_product_Desc {
+	font-family: arial, sans-serif;
+	font-size: 11px;
+	text-transform: none;
+	margin: -20px 0 0 10px;
+	line-height: 13px;
+}
+
+.tv_expand_product_cta{
+	font-family:arial, sans-serif;
+	font-size:12px;
+	color:#000000;
+	background-color:#F9F5F5;
+	padding:5px 10px;
+	position: absolute;
+	top:136px;
+	left:48px;
+	text-decoration:none;
+	text-transform:none;
+}
+
+.tv_expand_product_cta:hover{
+	background-color:#000000;
+	color:#FFFFFF;
+}
+
+/* 05. disclaimer */
+#tv_expand_disclaimer{
+	position: absolute;
+	width:100%;
+	top:165px;
+	display:none;
+}
+
+#tv_expand_disclaimer p{
+	font-size:10px;
+	line-height: 11px;
+	font-family: arial, sans-serif;
+	color:#ffffff;
+	text-transform: none;
+	background-color:rgba(0,0,0,.8);
+	border-radius:5px;
+	padding:10px;
+	width:460px;
+	margin:0 auto;
+	display:block;
+}
+
+#tv_expand_disclaimer_close_btn {
+	position: absolute;
+	left: 476px;
+	top: -5px;
+}
+
+
+
+
+
+
+
+
+
+
+
